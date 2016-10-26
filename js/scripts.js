@@ -1,7 +1,7 @@
 var vowels = ['a', 'e', 'i', 'o', 'u'];
 var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
-var tailingSymbols = [',','.',';',':','!','?',")",'}',"]"]
-//This funciton
+
+//This funciton splits sentence into words and calls pigLatin() on each word
 var pigLatinSentence = function(sentenceInput) {
   var words = sentenceInput.split(" ");
   var pigLatinFinal = [];
@@ -11,8 +11,6 @@ var pigLatinSentence = function(sentenceInput) {
   });
     return pigLatinFinal.join(" ");
 };
-
-
 
 //This function takes a word and returns pig latin version of that word
 var pigLatin = function (input){
@@ -28,7 +26,6 @@ var pigLatin = function (input){
         letters.push(letters.shift());
       }
       else if (consonants.includes(letters[0])){
-
         letters.push(letters.shift());
         if (letters[0] === "y") {
           letters.push("a", "y");
