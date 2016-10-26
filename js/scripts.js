@@ -18,7 +18,6 @@ var pigLatinSentence = function(sentenceInput) {
 var pigLatin = function (input){
   var inputNoSymbols = input.replace(/[^a-zA-Z ]/g, "").toLowerCase();
   var letters = inputNoSymbols.split("");
-  var inputLength = input.length;
   if (vowels.includes(letters[0])){
     letters.push("a", "y");
   }
