@@ -2,7 +2,6 @@ var vowels = ['a', 'e', 'i', 'o', 'u'];
 var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 
 var pigLatin = function (input){
-  var consanantRep = []
   var inputNoSymbols = input.replace(/[^a-zA-Z ]/g, "").toLowerCase();
   var letters = inputNoSymbols.split("");
   var inputLength = input.length;
@@ -12,15 +11,18 @@ var pigLatin = function (input){
     //alert(letters);
   }
   else {
+    debugger
     for (idx = 0; idx < letters.length; idx ++)
-      if (consonants.includes(letters[idx])){
-        consanantRep.push(letters[idx]);
+      if (consonants.includes(letters[0])){
+
+        letters.push(letters.shift());
       }
       else {
+        letters.push("a", "y");
         break
       }
-    //var firstLetter = letters[0];
-    //letters.shift()
+
+    //var firstLetter = letters.shift();
     //letters.push(firstLetter, "a", "y");
 
 
