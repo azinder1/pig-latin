@@ -16,8 +16,7 @@ var pigLatinSentence = function(sentenceInput) {
 
 //This function takes a word and returns pig latin version of that word
 var pigLatin = function (input){
-  //replace(/[^a-zA-Z ]/g, "")
-  var inputNoSymbols = input.toLowerCase();
+  var inputNoSymbols = input.replace(/[^a-zA-Z ]/g, "").toLowerCase();
   var letters = inputNoSymbols.split("");
   var inputLength = input.length;
   if (vowels.includes(letters[0])){
